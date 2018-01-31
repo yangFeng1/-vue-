@@ -4,13 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import jquery from 'jquery'
+import './assets/css/common.css'
+import './assets/css/icon/iconfont.css';
+import Mint from 'mint-ui';
+Vue.use(Mint);
+import 'mint-ui/lib/style.css';
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
 })
 window.$ = jquery
