@@ -7,8 +7,11 @@ import jquery from 'jquery'
 import './assets/css/common.css'
 import './assets/css/icon/iconfont.css';
 import Mint from 'mint-ui';
-Vue.use(Mint);
+import store from './store/store'
 import 'mint-ui/lib/style.css';
+Vue.use(Mint);
+
+
 
 Vue.config.productionTip = false
 
@@ -16,6 +19,7 @@ Vue.config.productionTip = false
 new Vue({
     el: '#app',
     router,
+    store,
     components: { App },
     template: '<App/>'
 })

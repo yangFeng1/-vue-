@@ -24,7 +24,7 @@
 </template>
 
 <script>
-
+import store from './store/store'
  import header from './common/header.vue'
  import foot from './common/foot.vue'
     export default {
