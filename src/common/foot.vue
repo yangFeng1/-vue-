@@ -1,15 +1,23 @@
 <template>
     <div class="foot">
         <ul>
-            <li>
+       
+        <li id="chat"> <router-link to="chat"> 
                 <i class="iconfont icon-wechat"  v-on:click="cut($event)"></i>
                 <p>微信</p>
+                 </router-link>
             </li>
-            <li>
+      
+             
+            <li id="content">
+            <router-link to="content"> 
                  <i class="iconfont icon-icon_contact_fill" v-on:click="cut($event)"></i>
+                    
                  <p>通讯录</p>
+                  </router-link>
                 </li>
             <li> 
+         
                 <i class="iconfont icon-find1" v-on:click="cut($event)"></i>
                 <p>发现</p>
             </li>
@@ -30,7 +38,8 @@ import store from './../store/store'
         },
         methods:{
             cut:function(e){
-                $(e.target).addClass('active').parent('li').siblings('li').find('i').removeClass('active')
+                // console.log(e.target)
+                // $(e.target).addClass('active').parents('li').siblings('li').find('i').removeClass('active')
             }
         },
         store

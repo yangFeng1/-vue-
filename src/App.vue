@@ -1,25 +1,15 @@
 <template>
   <div id="home">
-      <img class="homeImg" src="/../static/images/launchimage.png" alt="">
-      <div class="Temporary">
-        <myheader></myheader>
-        <div class="search">
-            <mt-search cancel-text=""></mt-search>
-        </div>
-        <div class="dialogue">
-            <ul>
-              <li v-for="item in dialogueItem">
-                <img v-bind:src=item.src alt="" class="portrait fl">
-                <span class="tisp">{{item.tisp}}</span>
-                <div class="fl">
-                    <div class="name">{{item.name}}</div>
-                    <div class="content">{{item.content}}</div>
-                </div>
-              </li>
-            </ul>
-        </div>
-      </div>
-      <myfoot></myfoot>
+    
+    
+       
+      <router-view></router-view>
+        
+        
+      
+  
+   
+        
   </div>
 </template>
 
@@ -55,7 +45,3 @@ import store from './store/store'
           }
     }
 </script>
-
-<style lang="scss" scoped type="text/css">
-    @import './assets/css/app.scss';
-</style>

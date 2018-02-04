@@ -1,10 +1,12 @@
 <template>
     <div class="top">
+      
             <p>微信</p>
             <span class="icon fr"></span>
         </div>
 </template>
 <style lang="scss" >
+ @import './../assets/css/app.scss';
     .top {
         height: 40px;
         width: 100%;
@@ -29,6 +31,6 @@
 </style>
 <script>
 export default{
-
+    
 }
 </script>
