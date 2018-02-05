@@ -43,7 +43,8 @@ import store from './store/store'
  .vux-pop-in-enter-active,
  .vux-pop-in-leave-active {
  will-change: transform;
- transition: all 250ms;
+ transition: all .25s;
+ width:100%;
  height: 100%;
  top: 0;
  position: absolute;

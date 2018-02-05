@@ -2,7 +2,7 @@
     <div class="foot">
         <ul>
        
-        <li id="chat"> <router-link to="chat"> 
+        <li id="chatIcon"> <router-link to="chat"> 
                 <i class="iconfont icon-wechat"  v-on:click="cut($event)"></i>
                 <p>微信</p>
                  </router-link>

@@ -9,7 +9,7 @@
         <div class="dialogue">
             <ul>
             <router-link to="/dialogue" v-for="item in dialogueItem">
-              <li  v-on:click="">
+              <li  v-on:click="changeName(item.name)">
                 <img v-bind:src=item.src alt="" class="portrait fl">
                 <span class="tisp">{{item.tisp}}</span>
                 <div class="fl">
@@ -20,6 +20,9 @@
               </router-link>
             </ul>
         </div>
+        <button @click="addAction">+{{$store.state.count}}</button>
+        <button @click="reduceAction">-{{$store.state.count}}</button>
+      
       </div>
          <myfoot></myfoot>
   </div>
@@ -31,6 +34,7 @@
 import store from './../store/store'
 import header from './../common/header.vue'
  import foot from './../common/foot.vue'
+  import {mapState,mapMutations,mapActions} from 'vuex';
     export default {
         data: function() {
             return {
@@ -47,18 +51,24 @@ import header from './../common/header.vue'
                 }]
             }
         },
+         computed:mapState(["dialogueName"]),
         components:{
            myheader: header,
             myfoot: foot
         },
         created:function(){
-            
+            var _this = this
        setTimeout(function(){
-            $('#chat i').addClass('active')
+        
+            $('#chatIcon i').addClass('active')
        },0)
         },
-        methods:{
-        }
+        methods:{...mapMutations(['add','reduce','changeName']),
+        count(){
+            return this.$store.getters.count;
+        },...mapActions(['addAction','reduceAction'])
+        },
+        store
     }
 </script>
 

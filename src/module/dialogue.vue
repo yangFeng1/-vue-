@@ -5,13 +5,14 @@
             <div class="personalInfo fr">
                 <i class="iconfont icon-my"></i>
             </div>
-            <div class="linkman">李雷</div>
+            <div class="linkman">{{$store.state.dialogueName}}</div>
             
         </div>
 
     </div>
 </template>
 <script>
+import store from './../store/store'
     export default {
         data: function() {
             return {}
@@ -20,7 +21,9 @@
             routerBack: function() {
                 this.$router.go(-1)
             }
-        }
+        },
+        store,
+        created(){}
 
     }
 </script>
