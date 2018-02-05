@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div id="content">
  <myheader></myheader>
     <h1>通讯录</h1>
        <myfoot></myfoot>
@@ -25,3 +25,6 @@
           }
  }
 </script>
+<style lang="">
+    
+</style>

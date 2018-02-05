@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="chat">
     <myheader></myheader>
       <div class="Temporary">
       
@@ -8,7 +8,8 @@
         </div>
         <div class="dialogue">
             <ul>
-              <li v-for="item in dialogueItem">
+            <router-link to="/dialogue" v-for="item in dialogueItem">
+              <li  v-on:click="">
                 <img v-bind:src=item.src alt="" class="portrait fl">
                 <span class="tisp">{{item.tisp}}</span>
                 <div class="fl">
@@ -16,6 +17,7 @@
                     <div class="content">{{item.content}}</div>
                 </div>
               </li>
+              </router-link>
             </ul>
         </div>
       </div>
@@ -54,10 +56,13 @@ import header from './../common/header.vue'
        setTimeout(function(){
             $('#chat i').addClass('active')
        },0)
+        },
+        methods:{
         }
     }
 </script>
 
 <style lang="scss" scoped type="text/css">
     @import './../assets/css/app.scss';
+    
 </style>

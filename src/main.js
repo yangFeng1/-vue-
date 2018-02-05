@@ -9,6 +9,7 @@ import './assets/css/icon/iconfont.css';
 import Mint from 'mint-ui';
 import store from './store/store'
 import 'mint-ui/lib/style.css';
+// import './assets/css/vue2-animate.css'
 Vue.use(Mint);
 
 

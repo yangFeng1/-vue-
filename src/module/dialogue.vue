@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div id="dialogue">
         <div class="top">
-            <div class="callback fl"><</div>
+            <div class="callback fl" v-on:click="routerBack()"><</div>
             <div class="personalInfo fr">
                 <i class="iconfont icon-my"></i>
             </div>
@@ -13,35 +13,45 @@
 </template>
 <script>
     export default {
-        data:function(){
+        data: function() {
             return {}
+        },
+        methods: {
+            routerBack: function() {
+                this.$router.go(-1)
+            }
         }
-        
+
     }
 </script>
 <style scoped lang="scss">
-    .top{
+    #dialogue {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .top {
         height: 40px;
         width: 100%;
         background: #333;
-        .callback{
-            color:#fff;
-            font-size:32px;
+        .callback {
+            color: #fff;
+            font-size: 32px;
             line-height: 40px;
-            margin-left:10px;
+            margin-left: 10px;
         }
-        .linkman{
+        .linkman {
             color: #fff;
             text-align: center;
             font-size: 20px;
             line-height: 40px;
         }
-        .personalInfo{
+        .personalInfo {
             color: #fff;
             margin-right: 10px;
-            margin-top:7px;
-            i{
-            font-size: 24px;
+            margin-top: 7px;
+            i {
+                font-size: 24px;
             }
         }
     }

@@ -1,15 +1,11 @@
 <template>
   <div id="home">
     
-    
-       
+      <transition name="vux-pop-out">
       <router-view></router-view>
         
-        
+          </transition>
       
-  
-   
-        
   </div>
 </template>
 
@@ -34,14 +30,45 @@ import store from './store/store'
             }
         },
         created: function() {
-            setTimeout(function() {
-                $('.homeImg').fadeOut('500')
-                $('.Temporary').css('display', 'block')
-            }, 1500)
         },
-         components:{
+          components:{
           myheader: header,
-           myfoot: foot
+         myfoot: foot
           }
     }
 </script>
+<style>
+.vux-pop-out-enter-active,
+ .vux-pop-out-leave-active,
+ .vux-pop-in-enter-active,
+ .vux-pop-in-leave-active {
+ will-change: transform;
+ transition: all 250ms;
+ height: 100%;
+ top: 0;
+ position: absolute;
+ backface-visibility: hidden;
+ perspective: 1000;
+ }
+ 
+ .vux-pop-out-enter {
+ opacity: 0;
+ transform: translate3d(-100%, 0, 0);
+ }
+ 
+ .vux-pop-out-leave-active {
+ opacity: 0;
+ transform: translate3d(100%, 0, 0);
+ }
+ 
+ .vux-pop-in-enter {
+ opacity: 0;
+ transform: translate3d(100%, 0, 0);
+ }
+ 
+ .vux-pop-in-leave-active {
+ opacity: 0;
+ transform: translate3d(-100%, 0, 0);
+ }
+
+</style>
